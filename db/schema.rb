@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_212750) do
+ActiveRecord::Schema.define(version: 2021_01_14_214103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2021_01_13_212750) do
     t.index ["user_id"], name: "index_filters_on_user_id"
   end
 
+  create_table "save_filters", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "filter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["filter_id"], name: "index_save_filters_on_filter_id"
+    t.index ["user_id"], name: "index_save_filters_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -32,4 +41,6 @@ ActiveRecord::Schema.define(version: 2021_01_13_212750) do
   end
 
   add_foreign_key "filters", "users"
+  add_foreign_key "save_filters", "filters"
+  add_foreign_key "save_filters", "users"
 end

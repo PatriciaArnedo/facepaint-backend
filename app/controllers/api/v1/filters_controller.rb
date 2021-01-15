@@ -5,7 +5,7 @@ class Api::V1::FiltersController < ApplicationController
       end
     
       def index
-        filters = Filter.all.includes(:save_filters)
+        filters = Filter.all
         render json: filters
       end
   
