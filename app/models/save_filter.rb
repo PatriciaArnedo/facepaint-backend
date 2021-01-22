@@ -13,4 +13,8 @@ class SaveFilter < ApplicationRecord
     self.filter.user.username
   end
 
+  def id_user
+    self.filter.user.id
+  end
+
 end
