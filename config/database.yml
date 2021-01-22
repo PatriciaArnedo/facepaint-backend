@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: facepaint_backend_development
+  url: <%= ENV['DATABASE_URL'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +59,7 @@ development:
 test:
   <<: *default
   database: facepaint_backend_test
+  url: <%= ENV['DATABASE_URL'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,4 +84,4 @@ production:
   <<: *default
   database: facepaint_backend_production
   username: facepaint_backend
-  password: <%= ENV['FACEPAINT_BACKEND_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
