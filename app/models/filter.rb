@@ -6,4 +6,9 @@ class Filter < ApplicationRecord
     self.user.username
   end
 
+  def save_count
+    saved = SaveFilter.all.filter{ |filter| filter.filter_id == self.id}
+    return saved.length()
+  end
+
 end
