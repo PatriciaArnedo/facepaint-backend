@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:show, :index, :create]
+      resources :users, only: [:show, :index, :create, :update]
       post '/users/login', to: 'users#login'
       resources :filters, only: [:show, :index, :create, :destroy]
       resources :save_filters, only: [:show, :index, :create, :destroy]
