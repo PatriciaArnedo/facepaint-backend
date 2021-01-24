@@ -19,4 +19,8 @@ class SaveFilter < ApplicationRecord
     self.filter.user.id
   end
 
+  def save_count
+    self.filter.save_count
+  end
+
 end
