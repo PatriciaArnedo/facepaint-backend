@@ -11,4 +11,4 @@ RUN bundle install
 
 COPY . .
 
-CMD rails s -b 0.0.0.0
+CMD rails s -e production -b 0.0.0.0
