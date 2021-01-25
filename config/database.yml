@@ -83,6 +83,7 @@ test:
 production:
   <<: *default
   database: facepaint_backend_development
+  adapter: postgresql
   username: <%= ENV["DB_USER"] %>  # e.g. "my-database-user"
   password: <%= ENV["DB_PASS"] %> # e.g. "my-database-password"
   database: <%= ENV.fetch("DB_NAME") { "vote_production" } %>
