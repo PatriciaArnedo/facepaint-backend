@@ -1,6 +1,6 @@
 class Filter < ApplicationRecord
   belongs_to :user
-  has_many :save_filters
+  has_many :save_filters, dependent: :destroy
 
   def username 
     self.user.username

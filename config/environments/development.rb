@@ -27,6 +27,11 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.after_initialize do
+    ActiveRecord::Base.logger = Rails.logger.clone
+    ActiveRecord::Base.logger.level = Logger::INFO
+  end
+  
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 

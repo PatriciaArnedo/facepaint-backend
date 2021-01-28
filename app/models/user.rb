@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
-    has_many :filters
-    has_many :save_filters
+    has_many :filters, dependent: :destroy
+    has_many :save_filters, dependent: :destroy
     has_secure_password
 
     validates :username, presence: true, uniqueness: true
