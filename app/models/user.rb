@@ -11,3 +11,6 @@ class User < ApplicationRecord
         return saved.length()
     end
 end
+
+
+

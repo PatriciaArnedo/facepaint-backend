@@ -26,3 +26,5 @@ class Api::V1::FiltersController < ApplicationController
           params.permit(:name, :img, :user_id)
       end
 end
+
+
